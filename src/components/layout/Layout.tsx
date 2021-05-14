@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import styles from "./styles/Layout.module.css";
+import Header from "./Header";
+import styles from "./styles/Layout.module.scss";
 
 interface LayoutProps {
   children: ReactNode;
@@ -7,9 +8,12 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
-      {children}
-    </div>
+    <>
+      <Header />
+      <main className={styles.container}>
+        {children}
+      </main>
+    </>
   );
 };
 
